@@ -3,33 +3,33 @@
     <div class="container">
       <div class="main__content">
         <div class="main__content__slider">
-          <div class="main__content__slider__window">
-            <div class="main__content__slider__window__list">
-              <div class="main__content__slider__window__list__item">
+          <div ref="slider_window" class="main__content__slider__window">
+            <div ref="slider_list" class="main__content__slider__window__list">
+              <div 
+                v-for="sliderItem in sliderData"
+                :key="sliderItem.name + sliderItem.id"
+                class="main__content__slider__window__list__item"
+              >
                 <div class="main__content__slider__window__list__item__info">
-                  <div class="main__content__slider__window__list__item__info__title  advantages_text">автономная канализация для частного дома</div>
-                  <div class="main__content__slider__window__list__item__info__text  advantages_text">производим автономные канализации, очистные сооружения, накопительные ёмкости и различные комплектующие к ним.</div>
-                  <button class="main__content__slider__window__list__item__info__button  main-button-style">Перейти в каталог</button>
+                  <div class="main__content__slider__window__list__item__info__title  advantages_text">{{ sliderItem.value.title }}</div>
+                  <div class="main__content__slider__window__list__item__info__text  advantages_text">{{ sliderItem.value.description }}</div>
+                  <button class="main__content__slider__window__list__item__info__button  main-button-style">{{ sliderItem.value.btnText }}</button>
                 </div>
                 <div class="main__content__slider__window__list__item__poster">
-                  <img src="" alt="poster" class="main__content__slider__window__list__item__poster__image">
+                  <img :src="'https://api.los-bio.ru/files/certificates/' + sliderItem.value.image[0].name" alt="poster" class="main__content__slider__window__list__item__poster__image">
                 </div>
               </div>
             </div>
           </div>
           <div class="main__content__slider__pagination">
             <div class="main__content__slider__pagination__menu">
-              <div class="main__content__slider__pagination__menu__option  option_selected">
-                <div class="main__content__slider__pagination__menu__option__outer-circle">
-                  <div class="main__content__slider__pagination__menu__option__inner-circle"></div>
-                </div>
-              </div>
-              <div class="main__content__slider__pagination__menu__option">
-                <div class="main__content__slider__pagination__menu__option__outer-circle">
-                  <div class="main__content__slider__pagination__menu__option__inner-circle"></div>
-                </div>
-              </div>
-              <div class="main__content__slider__pagination__menu__option">
+              <div 
+                v-for="slideId in sliderData?.length"
+                :key="sliderData[slideId]?.name"
+                :class="{option_selected: selectedSlide == slideId}"
+                @click="showSelectedSlide(slideId)"
+                class="main__content__slider__pagination__menu__option"
+              >
                 <div class="main__content__slider__pagination__menu__option__outer-circle">
                   <div class="main__content__slider__pagination__menu__option__inner-circle"></div>
                 </div>
@@ -40,35 +40,43 @@
         <div class="main__content__advantages">
           <div class="main__content__title  advantages_text">наши преимущества</div>
           <div class="main__content__advantages__list">
-            <div class="main__content__advantages__list__item">
+            <div 
+              v-for="advantageItem in advantagesData"
+              :key="advantageItem.name + advantageItem.id"
+              class="main__content__advantages__list__item"
+            >
               <div class="main__content__advantages__list__item__header">
                 <div class="main__content__advantages__list__item__header__icon">
-                  <img src="" alt="icon" class="main__content__advantages__list__item__header__icon__image">
+                  <img :src="advantageItem.value.icon" alt="icon" class="main__content__advantages__list__item__header__icon__image">
                 </div>
-                <div class="main__content__advantages__list__item__header__title  advantages_text">оперативность расчётов</div>
+                <div class="main__content__advantages__list__item__header__title  advantages_text">{{ advantageItem.value.title }}</div>
               </div>
-              <div class="main__content__advantages__list__item__text  advantages_text">рассчитываем стоимость производства необходимого вам оборудования в течение нескольких часов после заявки</div>
+              <div class="main__content__advantages__list__item__text  advantages_text">{{ advantageItem.value.description }}</div>
             </div>
           </div>
         </div>
         <div class="main__content__projects">
           <div class="main__content__title  advantages_text">проекты</div>
           <div class="main__content__projects__list">
-            <div class="main__content__projects__list__item">
+            <div 
+              v-for="projectItem in projectsData"
+              :key="projectItem.slug + projectItem.id"
+              class="main__content__projects__list__item"
+            >
               <div class="main__content__projects__list__item__poster">
-                <img src="" alt="poster" class="main__content__projects__list__item__poster__image"/>
+                <img :src="'https://api.los-bio.ru/files/projects/' + projectItem.photos[0]?.name" alt="poster" class="main__content__projects__list__item__poster__image"/>
               </div>
-              <div class="main__content__projects__list__item__name  advantages_text">проект 1</div>
-              <div class="main__content__projects__list__item__title  advantages_text">mauris varius sem lacinia felis pellentesque. Maecenas vulputate tortor mattis consectetur.</div>
+              <div class="main__content__projects__list__item__name  advantages_text">{{ projectItem.title }}</div>
+              <div class="main__content__projects__list__item__title  advantages_text">{{ projectItem.works }}</div>
               <div class="main__content__projects__list__item__separator"></div>
               <div class="main__content__projects__list__item__info">
                 <span class="main__content__projects__list__item__info__name">Тип работы:</span>
-                <span class="info_text">строительство станции биологической очистки</span>
+                <span class="info_text">{{ projectItem.equipment }}</span>
               </div>
               <div class="main__content__projects__list__item__separator"></div>
               <div class="main__content__projects__list__item__info">
                 <span class="main__content__projects__list__item__info__name">Заказчик:</span>
-                <span class="info_text">ИП Иван Васильев</span>
+                <span class="info_text">{{ projectItem.customer }}</span>
               </div>
             </div>
           </div>
@@ -83,8 +91,91 @@ export default {
   name: 'HomePage',
   data(){
     return {
-
+      sliderData: null,
+      selectedSlide: 1,
+      advantagesData: null,
+      projectsData: null,
     }
+  },
+  methods: {
+    async getSliderData(){
+      try {
+        let response = await fetch("https://api.los-bio.ru/info/group/slide", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Accept":	"*/*",
+            "Accept-Encoding": "deflate, gzip",
+            "Host":	"api.los-bio.ru"
+          }
+        });
+        response = await response.json();
+        const fun = async (res) => {
+          res = [...res];
+          for(let item of res){
+            item.value = await JSON.parse(item.value);
+          }
+          return res
+        }
+        response = await fun(response);
+        return response
+      } catch(e) {
+        console.log(e.message);
+      }
+    },
+    showSelectedSlide(slideId){
+      const slideWidth = this.$refs.slider_window.offsetWidth;
+      const scrollElem = this.$refs.slider_list;
+      scrollElem.scrollLeft = (slideId - 1) * slideWidth;
+      this.selectedSlide = slideId;
+    },
+    async getAdvantagesData(){
+      try {
+        let response = await fetch("https://api.los-bio.ru/info/group/advantage", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Accept":	"*/*",
+            "Accept-Encoding": "deflate, gzip",
+            "Host":	"api.los-bio.ru"
+          }
+        });
+        response = await response.json();
+        const fun = async (res) => {
+          res = [...res];
+          for(let item of res){
+            item.value = await JSON.parse(item.value);
+          }
+          return res
+        }
+        response = await fun(response);
+        return response
+      } catch(e) {
+        console.log(e.message);
+      }
+    },
+    async getProjectsData(){
+      try {
+        let response = await fetch("https://api.los-bio.ru/projects/", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Accept":	"*/*",
+            "Accept-Encoding": "deflate, gzip",
+            "Host":	"api.los-bio.ru"
+          }
+        });
+        response = await response.json();
+        return response
+      } catch(e) {
+        console.log(e.message);
+      }
+    }
+  },
+  async created(){
+    this.sliderData = await this.getSliderData();
+    this.advantagesData = await this.getAdvantagesData();
+    this.projectsData = await this.getProjectsData();
   }
 }
 </script>
