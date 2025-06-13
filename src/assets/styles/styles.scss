@@ -5,6 +5,8 @@ $grey-text-color:rgba(89, 91, 100, 1);
 $grey-2-text-color: rgba(255, 255, 255, 0.29);
 
 .main-button-style {
+  width: fit-content;
+  height: fit-content;
   border: none;
   background-color: $theme-main-color;
   display: flex;

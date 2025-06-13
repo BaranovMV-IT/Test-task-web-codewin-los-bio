@@ -3,7 +3,10 @@
     <div class="container">
       <div class="footer__content">
         <div class="footer__content__info">
-          <div class="footer__content__info__logo">
+          <div 
+            @click="()=>{this.$router.push('/')}" 
+            class="footer__content__info__logo"
+          >
             <img src="@/assets/images/logo.svg" alt="logo" class="footer__content__info__logo__image">
           </div>
           <div class="footer__content__info__name">ООО «ТОРГОВЫЙ ДОМ «ЛОС-БИО»</div>
@@ -80,7 +83,7 @@
   .list_option {
     font-size: 16px;
     font-weight: 400;
-    color: $main-text-color;
+    color: $main-2-text-color;
   }
   .text_underline {
     text-decoration: underline;
@@ -103,6 +106,7 @@
         &__logo {
           max-width: 100%;
           margin-bottom: 30px;
+          cursor: pointer;
           &__image {
             width: 100%;
             height: 100%;
@@ -159,6 +163,7 @@
           }
           &__value {
             font-size: 14px;
+            color: $main-text-color;
           }
           &__button {
             padding: 8px 20px;

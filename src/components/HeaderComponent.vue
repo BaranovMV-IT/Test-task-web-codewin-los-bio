@@ -39,7 +39,10 @@
     <div class="header__bottom">
       <div class="container">
         <nav class="header__bottom__nav">
-          <div class="header__bottom__nav__logo">
+          <div 
+            @click="()=>{this.$router.push('/')}"
+            class="header__bottom__nav__logo"
+          >
             <img src="@/assets/images/logo.svg" alt="logo" class="header__bottom__nav__logo__image">
           </div>
           <div class="header__bottom__nav__list">
@@ -124,6 +127,7 @@
         align-items: center;
         &__logo {
           max-width: 240px;
+          cursor: pointer;
           &__image {
             width: 100%;
             height: 100%;
@@ -154,7 +158,6 @@
           padding: 8px 20px;
           font-size: 14px;
           border-radius: 4px;
-          height: fit-content;
         }
       }
     }
