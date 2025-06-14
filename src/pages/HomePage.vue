@@ -1,10 +1,14 @@
 <template>
   <main class="main">
     <div class="container">
-      <div class="main__content">
+      <div class="main__content" v-if="selectedProjectSlug == null">
         <div class="main__content__slider">
           <div ref="slider_window" class="main__content__slider__window">
-            <div ref="slider_list" class="main__content__slider__window__list">
+            <div 
+              @scrollend="setSelectedSlide()"
+              ref="slider_list" 
+              class="main__content__slider__window__list"
+            >
               <div 
                 v-for="sliderItem in sliderData"
                 :key="sliderItem.name + sliderItem.id"
@@ -61,6 +65,7 @@
             <div 
               v-for="projectItem in projectsData"
               :key="projectItem.slug + projectItem.id"
+              @click="setSelectedProjectSlug(projectItem.slug)"
               class="main__content__projects__list__item"
             >
               <div class="main__content__projects__list__item__poster">
@@ -82,19 +87,26 @@
           </div>
         </div>
       </div>
+      <ProjectComponent :projectsData="projectsData" v-else/>
     </div>
   </main>
 </template>
 
 <script>
+import ProjectComponent from "@/components/ProjectComponent.vue";
+
 export default {
   name: 'HomePage',
+  components: {
+    ProjectComponent
+  },
   data(){
     return {
       sliderData: null,
       selectedSlide: 1,
       advantagesData: null,
       projectsData: null,
+      selectedProjectSlug: null
     }
   },
   methods: {
@@ -128,6 +140,26 @@ export default {
       const scrollElem = this.$refs.slider_list;
       scrollElem.scrollLeft = (slideId - 1) * slideWidth;
       this.selectedSlide = slideId;
+    },
+    setSelectedSlide(){
+      const slideWidth = this.$refs.slider_window.offsetWidth;
+      const scrollElem = this.$refs.slider_list;
+      const scrollPositions = this.sliderData.map((slide, id) => {
+        return id * slideWidth
+      });
+      for(let i = scrollPositions.length - 1; i >= 0; i--){
+        if(scrollElem.scrollLeft >= scrollPositions[i] - (slideWidth * 0.25)){
+          scrollElem.scrollLeft = scrollPositions[i];
+          this.selectedSlide = i + 1;
+          break;
+        }
+      }
+    },
+    setSelectedProjectSlug(projectSlug){
+      this.$router.push("/?project=" + projectSlug);
+      setTimeout(()=>{
+        location.reload();
+      }, 1);
     },
     async getAdvantagesData(){
       try {
@@ -173,6 +205,9 @@ export default {
     }
   },
   async created(){
+    if(this.$route.query.project){
+      this.selectedProjectSlug = this.$route.query.project;
+    }
     this.sliderData = await this.getSliderData();
     this.advantagesData = await this.getAdvantagesData();
     this.projectsData = await this.getProjectsData();
@@ -189,7 +224,6 @@ export default {
     text-transform: uppercase;
   }
 }
-
 .info_text {
   font-weight: 400;
   color: $main-2-text-color;
@@ -204,7 +238,6 @@ export default {
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
       &__slider {
         width: 100%;
         height: 533px;
@@ -392,6 +425,7 @@ export default {
             margin: 10px;
             background-color: rgba(18, 21, 35, 0.49);
             border-radius: 19px;
+            cursor: pointer;
             &__poster {
               min-width: 100%;
               max-width: 100%;
