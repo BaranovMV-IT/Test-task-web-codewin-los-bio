@@ -53,4 +53,29 @@ export default {
 a {
   text-decoration: none;
 }
+
+@media (max-width: 1200px){
+  .container {
+    min-width: 1000px;
+    max-width: 1000px;
+  }
+}
+@media (max-width: 991px){
+  .container {
+    min-width: 850px;
+    max-width: 850px;
+  }
+}
+@media (max-width: 768px){
+  .container {
+    min-width: 400px;
+    max-width: 400px;
+  }
+}
+@media (max-width: 375px){
+  .container {
+    min-width: 350px;
+    max-width: 350px;
+  }
+}
 </style>

@@ -148,7 +148,7 @@ export default {
         return id * slideWidth
       });
       for(let i = scrollPositions.length - 1; i >= 0; i--){
-        if(scrollElem.scrollLeft >= scrollPositions[i] - (slideWidth * 0.25)){
+        if(scrollElem.scrollLeft >= (scrollPositions[i] - (slideWidth * 0.5))){
           scrollElem.scrollLeft = scrollPositions[i];
           this.selectedSlide = i + 1;
           break;
@@ -259,8 +259,8 @@ export default {
             }
             &__item {
               display: flex;
-              min-width: 100%;
               max-width: 1170px;
+              min-width: 100%;
               min-height: 100%;
               max-height: 100%;
               &__info {
@@ -495,4 +495,448 @@ export default {
       display: block;
     }
   }
+
+@media (max-width: 1200px){
+  .main__content__slider {
+    margin: 40px 0px 80px 0px;
+    height: 500px;
+  }
+  .main__content__slider__window__list__item {
+    max-width: 1000px;
+  }
+  .main__content__slider__window__list__item__info {
+    min-width: 500px;
+    max-width: 500px;
+    padding: 15px 0px 25px 0px;
+  }
+  .main__content__slider__window__list__item__info__title {
+    font-size: 50px;
+    margin-bottom: 25px;
+  }
+  .main__content__slider__window__list__item__info__text {
+    font-size: 18px;
+  }
+  .main__content__slider__window__list__item__info__button {
+    padding: 14px 35px;
+  }
+  .main__content__slider__window__list__item__poster__image {
+    min-width: 325px;
+    max-width: 325px;
+  }
+  .main__content__slider__pagination__menu__option {
+    width: 30px;
+    max-width: 30px;
+    height: 30px;
+    max-height: 30px;
+  }
+
+
+
+  .main__content__title {
+    font-size: 38px;
+    margin-bottom: 40px;
+  }
+  .main__content__advantages {
+    margin-bottom: 80px;
+  }
+  .main__content__advantages__list {
+    margin: -13px;
+  }
+  .main__content__advantages__list__item {
+    width: 487px;
+    padding: 30px 40px;
+    margin: 13px;
+  }
+  .main__content__advantages__list__item__header__icon {
+    min-width: 65px;
+    max-width: 65px;
+    min-height: 65px;
+    max-height: 65px;
+    margin-right: 20px;
+  }
+  .main__content__advantages__list__item__header__title {
+    font-size: 25px;
+  }
+  .main__content__advantages__list__item__text {
+    font-size: 17px;
+  }
+
+
+
+  .main__content__projects {
+    margin-bottom: 80px;
+  }
+  .main__content__projects__list {
+    margin: -7px;
+  }
+  .main__content__projects__list__item {
+    width: 324px;
+    padding: 30px;
+    margin: 7px;
+  }
+  .main__content__projects__list__item__poster {
+    margin-bottom: 25px;
+    min-height: 185px;
+    max-height: 185px;
+  }
+  .main__content__projects__list__item__title {
+    font-size: 16px;
+  }
+  .main__content__projects__list__item__name {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .main__content__projects__list__item__info {
+    font-size: 15px;
+  }
+  .main__content__projects__list__item__separator {
+    margin: 12px 0px;
+  }
+}
+@media (max-width: 991px){
+  .main__content__slider {
+    margin: 20px 0px 40px 0px;
+    height: 450px;
+  }
+  .main__content__slider__window__list__item {
+    max-width: 850px;
+  }
+  .main__content__slider__window__list__item__info {
+    min-width: 450px;
+    max-width: 450px;
+    padding: 15px 0px 25px 0px;
+  }
+  .main__content__slider__window__list__item__info__title {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+  .main__content__slider__window__list__item__info__text {
+    font-size: 17px;
+  }
+  .main__content__slider__window__list__item__info__button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .main__content__slider__window__list__item__poster__image {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .main__content__slider__pagination__menu__option {
+    width: 25px;
+    max-width: 25px;
+    height: 25px;
+    max-height: 25px;
+  }
+  .main__content__slider__pagination__menu__option__outer-circle {
+    width: 15px;
+    max-width: 15px;
+    height: 15px;
+    max-height: 15px;
+  }
+  .main__content__slider__pagination__menu__option__inner-circle {
+    width: 10px;
+    max-width: 10px;
+    height: 10px;
+    max-height: 10px;
+  }
+
+
+
+  .main__content__title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .main__content__advantages {
+    margin-bottom: 50px;
+  }
+  .main__content__advantages__list {
+    margin: -5px;
+  }
+  .main__content__advantages__list__item {
+    width: 420px;
+    padding: 20px 30px;
+    margin: 5px;
+  }
+  .main__content__advantages__list__item__header {
+    margin-bottom: 7px;
+  }
+  .main__content__advantages__list__item__header__icon {
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    margin-right: 15px;
+  }
+  .main__content__advantages__list__item__header__title {
+    font-size: 20px;
+  }
+  .main__content__advantages__list__item__text {
+    font-size: 16px;
+  }
+
+
+
+  .main__content__projects {
+    margin-bottom: 60px;
+  }
+  .main__content__projects__list {
+    margin: -5px;
+  }
+  .main__content__projects__list__item {
+    width: 276px;
+    padding: 20px;
+    margin: 5px;
+  }
+  .main__content__projects__list__item__poster {
+    margin-bottom: 15px;
+    min-height: 150px;
+    max-height: 150px;
+  }
+  .main__content__projects__list__item__name {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .main__content__projects__list__item__title {
+    font-size: 16px;
+  }
+  .main__content__projects__list__item__info {
+    font-size: 14px;
+  }
+  .main__content__projects__list__item__separator {
+    margin: 12px 0px;
+  }
+}
+@media (max-width: 768px){
+  .main__content__slider {
+    margin: 10px 0px 20px 0px;
+    height: 300px;
+  }
+  .main__content__slider__window__list__item {
+    max-width: 400px;
+  }
+  .main__content__slider__window__list__item__info {
+    min-width: 300px;
+    max-width: 300px;
+    padding: 10px 0px 15px 0px;
+    z-index: 2;
+  }
+  .main__content__slider__window__list__item__info__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .main__content__slider__window__list__item__info__text {
+    font-size: 14px;
+  }
+  .main__content__slider__window__list__item__info__button {
+    padding: 7px 15px;
+    font-size: 14px;
+    border-radius: 7px;
+  }
+  .main__content__slider__window__list__item__poster__image {
+    min-width: 250px;
+    max-width: 250px;
+    margin-left: -150px;
+  }
+  .main__content__slider__pagination__menu__option {
+    width: 20px;
+    max-width: 20px;
+    height: 20px;
+    max-height: 20px;
+  }
+  .main__content__slider__pagination__menu__option__outer-circle {
+    width: 12px;
+    max-width: 12px;
+    height: 12px;
+    max-height: 12px;
+  }
+  .main__content__slider__pagination__menu__option__inner-circle {
+    width: 8px;
+    max-width: 8px;
+    height: 8px;
+    max-height: 8px;
+  }
+
+
+
+  .main__content__title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .main__content__advantages {
+    margin-bottom: 40px;
+  }
+  .main__content__advantages__list {
+    margin: -5px;
+  }
+  .main__content__advantages__list__item {
+    width: 400px;
+    padding: 15px 20px;
+    margin: 5px;
+  }
+  .main__content__advantages__list__item__header {
+    margin-bottom: 7px;
+  }
+  .main__content__advantages__list__item__header__icon {
+    min-width: 35px;
+    max-width: 35px;
+    min-height: 35px;
+    max-height: 35px;
+    margin-right: 10px;
+  }
+  .main__content__advantages__list__item__header__title {
+    font-size: 16px;
+  }
+  .main__content__advantages__list__item__text {
+    font-size: 13px;
+  }
+
+
+
+  .main__content__projects {
+    margin-bottom: 40px;
+  }
+  .main__content__projects__list {
+    margin: -5px;
+  }
+  .main__content__projects__list__item {
+    width: 400px;
+    padding: 20px;
+    margin: 5px;
+  }
+  .main__content__projects__list__item__poster {
+    margin-bottom: 20px;
+    min-height: 130px;
+    max-height: 130px;
+  }
+  .main__content__projects__list__item__name {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .main__content__projects__list__item__title {
+    font-size: 15px;
+  }
+  .main__content__projects__list__item__info {
+    font-size: 15px;
+  }
+  .main__content__projects__list__item__separator {
+    margin: 5px 0px;
+  }
+}
+@media (max-width: 375px){
+  .main__content__slider {
+    margin: 10px 0px 20px 0px;
+    height: 350px;
+  }
+  .main__content__slider__window__list__item {
+    max-width: 350px;
+  }
+  .main__content__slider__window__list__item__info {
+    min-width: 275px;
+    max-width: 275px;
+    padding: 10px 0px 15px 0px;
+    z-index: 2;
+  }
+  .main__content__slider__window__list__item__info__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .main__content__slider__window__list__item__info__text {
+    font-size: 14px;
+  }
+  .main__content__slider__window__list__item__info__button {
+    padding: 7px 15px;
+    font-size: 14px;
+    border-radius: 7px;
+  }
+  .main__content__slider__window__list__item__poster__image {
+    min-width: 200px;
+    max-width: 200px;
+    margin-left: -150px;
+  }
+  .main__content__slider__pagination__menu__option {
+    width: 20px;
+    max-width: 20px;
+    height: 20px;
+    max-height: 20px;
+  }
+  .main__content__slider__pagination__menu__option__outer-circle {
+    width: 12px;
+    max-width: 12px;
+    height: 12px;
+    max-height: 12px;
+  }
+  .main__content__slider__pagination__menu__option__inner-circle {
+    width: 8px;
+    max-width: 8px;
+    height: 8px;
+    max-height: 8px;
+  }
+
+
+
+  .main__content__title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .main__content__advantages {
+    margin-bottom: 40px;
+  }
+  .main__content__advantages__list {
+    margin: -5px;
+  }
+  .main__content__advantages__list__item {
+    width: 350px;
+    padding: 10px 15px;
+    margin: 5px;
+  }
+  .main__content__advantages__list__item__header {
+    margin-bottom: 7px;
+  }
+  .main__content__advantages__list__item__header__icon {
+    min-width: 35px;
+    max-width: 35px;
+    min-height: 35px;
+    max-height: 35px;
+    margin-right: 10px;
+  }
+  .main__content__advantages__list__item__header__title {
+    font-size: 16px;
+  }
+  .main__content__advantages__list__item__text {
+    font-size: 13px;
+  }
+
+
+
+  .main__content__projects {
+    margin-bottom: 40px;
+  }
+  .main__content__projects__list {
+    margin: -5px;
+  }
+  .main__content__projects__list__item {
+    width: 350px;
+    padding: 10px;
+    margin: 5px;
+  }
+  .main__content__projects__list__item__poster {
+    margin-bottom: 10px;
+    min-height: 130px;
+    max-height: 130px;
+  }
+  .main__content__projects__list__item__name {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .main__content__projects__list__item__title {
+    font-size: 14px;
+  }
+  .main__content__projects__list__item__info {
+    font-size: 14px;
+  }
+  .main__content__projects__list__item__separator {
+    margin: 5px 0px;
+  }
+}
 </style>

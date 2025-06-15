@@ -122,7 +122,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 18px 0px 20px 0px;
+      padding: 18px 0px 20px 0px;
       &__nav {
         display: flex;
         justify-content: space-between;
@@ -164,4 +164,129 @@ export default {
       }
     }
   }
+
+@media (max-width: 1200px){
+  .header__top {
+    height: 35px;
+  }
+  .header__top__contacts__item__value {
+    font-size: 10px;
+  }
+
+
+  
+  .header__bottom {
+    padding: 15px 0px 17px 0px;
+  }
+  .header__bottom__nav__logo {
+    max-width: 200px;
+  }
+  .list_option {
+    font-size: 15px;
+    &:not(:last-child){
+      margin-right: 45px;
+    }
+  }
+}
+@media (max-width: 991px){
+  .header__top {
+    height: 30px;
+  }
+  .header__top__contacts__item__icon {
+    max-width: 20px;
+    max-height: 20px;
+  }
+  .header__top__contacts__item__value {
+    font-size: 10px;
+  }
+
+
+  
+  .header__bottom {
+    padding: 10px 0px 13px 0px;
+  }
+  .header__bottom__nav__logo {
+    max-width: 180px;
+  }
+  .list_option {
+    font-size: 14px;
+    &:not(:last-child){
+      margin-right: 40px;
+    }
+  }
+  .header__bottom__nav__button {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px){
+  .header__top {
+    height: 50px;
+  }
+  .header__top__contacts {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header__top__contacts__item {
+    margin-right: 20px;
+  }
+  .header__top__contacts__item__icon {
+    max-width: 15px;
+    max-height: 15px;
+  }
+  .header__top__contacts__item__value {
+    font-size: 10px;
+  }
+
+
+  
+  .header__bottom {
+    padding: 7px 0px 10px 0px;
+  }
+  .header__bottom__nav__logo {
+    max-width: 130px;
+  }
+  .header__bottom__nav__list {
+    display: none;
+  }
+  .header__bottom__nav__button {
+    padding: 7px 16px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 375px){
+  .header__top {
+    height: 75px;
+  }
+  .header__top__contacts {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header__top__contacts__item {
+    margin: 4px 20px 4px 0px;
+  }
+  .header__top__contacts__item__icon {
+    max-width: 15px;
+    max-height: 15px;
+  }
+  .header__top__contacts__item__value {
+    font-size: 13px;
+  }
+
+
+  
+  .header__bottom {
+    padding: 7px 0px 10px 0px;
+  }
+  .header__bottom__nav__logo {
+    max-width: 130px;
+  }
+  .header__bottom__nav__list {
+    display: none;
+  }
+  .header__bottom__nav__button {
+    padding: 7px 15px;
+    font-size: 12px;
+  }
+}
 </style>

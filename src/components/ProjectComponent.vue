@@ -213,6 +213,7 @@ export default {
           display: flex;
           flex-direction: column;
           padding: 35px 40px 52px 40px;
+          margin-right: 41px;
           background-color: rgba(18, 21, 35, 0.49);
           border-radius: 19px;
           &__title {
@@ -329,8 +330,7 @@ export default {
           }
         }
         &__posters {
-          min-width: 433px;
-          max-width: 433px;
+          flex-grow: 1;
           height: fit-content;
           &__general {
             position: relative;
@@ -393,4 +393,328 @@ export default {
     color: rgba(255, 255, 255, 0.13);
     cursor: default;
   }
+
+@media (max-width: 1200px){
+  .main__content__path {
+    margin: 10px 0px 32px 0px;
+  }
+  .main__content__data {
+    margin-bottom: 55px;
+  }
+  .main__content__data__info {
+    min-width: 591px;
+    max-width: 591px;
+    margin-right: 31px;
+    padding: 30px 35px 47px 35px;
+  }
+  .main__content__data__info__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .main__content__data__info__text {
+    margin-bottom: 25px;
+  }
+  .main__content__data__info__text__list__item {
+    font-size: 17px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  .main__content__data__info__advantages {
+    margin-bottom: 40px;
+  }
+  .main__content__data__info__advantages__title {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .main__content__data__info__advantages__list__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  .main__content__data__info__advantages__list__item__text {
+    font-size: 17px;
+  }
+  .main__content__data__info__additional__list__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  .main__content__data__info__additional__list__item__rows__name {
+    font-size: 17px;
+    margin-bottom: 7px;
+  }
+  .main__content__data__info__additional__list__item__rows__text {
+    font-size: 17px;
+    line-height: 150%;
+  }
+
+
+
+  .main__content__data__posters__general {
+    min-height: 275px;
+    max-height: 275px;
+  }
+  .main__content__data__posters__minorities__list__item {
+    min-width: 75px;
+    max-width: 75px;
+    min-height: 60px;
+    max-height: 60px;
+  }
+}
+@media (max-width: 991px){
+  .main__content__path {
+    margin: 7px 0px 25px 0px;
+  }
+  .main__content__path__item {
+    font-size: 13px;
+  }
+  .main__content__path__separator {
+    margin: 0px 10px 0px 10px;
+  }
+  .main__content__data {
+    margin-bottom: 45px;
+  }
+  .main__content__data__info {
+    min-width: 525px;
+    max-width: 525px;
+    margin-right: 25px;
+    padding: 30px 35px 47px 35px;
+  }
+  .main__content__data__info__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .main__content__data__info__text {
+    margin-bottom: 20px;
+  }
+  .main__content__data__info__text__list__item {
+    font-size: 16px;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  .main__content__data__info__advantages {
+    margin-bottom: 35px;
+  }
+  .main__content__data__info__advantages__title {
+    font-size: 16px;
+    margin-bottom: 17px;
+  }
+  .main__content__data__info__advantages__list__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  .main__content__data__info__advantages__list__item__text {
+    font-size: 16px;
+  }
+  .main__content__data__info__additional__list__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  .main__content__data__info__additional__list__item__rows__name {
+    font-size: 16px;
+    margin-bottom: 7px;
+  }
+  .main__content__data__info__additional__list__item__rows__text {
+    font-size: 16px;
+    line-height: 135%;
+  }
+
+
+
+  .main__content__data__posters__general {
+    min-height: 225px;
+    max-height: 225px;
+  }
+  .main__content__data__posters__minorities__list__item {
+    min-width: 60px;
+    max-width: 60px;
+    min-height: 50px;
+    max-height: 50px;
+  }
+}
+@media (max-width: 768px){
+  .main__content__path {
+    margin: 5px 0px 20px 0px;
+  }
+  .main__content__path__item {
+    font-size: 14px;
+  }
+  .main__content__path__separator {
+    margin: 0px 10px 0px 10px;
+  }
+  .main__content__data {
+    margin-bottom: 35px;
+    flex-direction: column;
+  }
+  .main__content__data__info {
+    min-width: 400px;
+    max-width: 400px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    padding: 20px 25px 30px 25px;
+  }
+  .main__content__data__info__title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .main__content__data__info__text {
+    margin-bottom: 20px;
+  }
+  .main__content__data__info__text__list__item {
+    font-size: 15px;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  .main__content__data__info__advantages {
+    margin-bottom: 25px;
+  }
+  .main__content__data__info__advantages__title {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .main__content__data__info__advantages__list__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  .main__content__data__info__advantages__list__item__point {
+    min-width: 10px;
+    max-width: 10px;
+    min-height: 10px;
+    max-height: 10px;
+  }
+  .main__content__data__info__advantages__list__item__text {
+    font-size: 15px;
+  }
+  .main__content__data__info__additional__list__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  .main__content__data__info__additional__list__item__point {
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    font-size: 15px;
+    margin-right: 8px;
+  }
+  .main__content__data__info__additional__list__item__rows__name {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .main__content__data__info__additional__list__item__rows__text {
+    font-size: 15px;
+    line-height: 125%;
+  }
+
+
+
+  .main__content__data__posters__general {
+    min-height: 200px;
+    max-height: 200px;
+  }
+  .main__content__data__posters__minorities__list__item {
+    min-width: 80px;
+    max-width: 80px;
+    min-height: 60px;
+    max-height: 60px;
+  }
+}
+@media (max-width: 375px){
+  .main__content__path {
+    margin: 5px 0px 15px 0px;
+  }
+  .main__content__path__item {
+    font-size: 13px;
+  }
+  .main__content__path__separator {
+    margin: 0px 10px 0px 10px;
+  }
+  .main__content__data {
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+  .main__content__data__info {
+    min-width: 350px;
+    max-width: 350px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    padding: 15px 20px 25px 20px;
+  }
+  .main__content__data__info__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .main__content__data__info__text {
+    margin-bottom: 15px;
+  }
+  .main__content__data__info__text__list__item {
+    font-size: 14px;
+    line-height: 125%;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  .main__content__data__info__advantages {
+    margin-bottom: 20px;
+  }
+  .main__content__data__info__advantages__title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .main__content__data__info__advantages__list__item {
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+  .main__content__data__info__advantages__list__item__point {
+    min-width: 8px;
+    max-width: 8px;
+    min-height: 8px;
+    max-height: 8px;
+  }
+  .main__content__data__info__advantages__list__item__text {
+    font-size: 14px;
+  }
+  .main__content__data__info__additional__list__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  .main__content__data__info__additional__list__item__point {
+    min-width: 18px;
+    max-width: 18px;
+    min-height: 18px;
+    max-height: 18px;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .main__content__data__info__additional__list__item__rows__name {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .main__content__data__info__additional__list__item__rows__text {
+    font-size: 14px;
+    line-height: 125%;
+  }
+
+
+
+  .main__content__data__posters__general {
+    min-height: 180px;
+    max-height: 180px;
+  }
+  .main__content__data__posters__minorities__list__item {
+    min-width: 70px;
+    max-width: 70px;
+    min-height: 55px;
+    max-height: 55px;
+  }
+}
 </style>
